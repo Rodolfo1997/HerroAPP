@@ -1,0 +1,33 @@
+<app-page-header [heading]="'AddBook'" [icon]="'fa-table'"></app-page-header>
+<div class="row">
+  <div class="col col-md-12"> 
+    <form (ngSubmit)="onSubmit()" >
+    
+      <input name="id" [(ngModel)]="bookModel.id" hidden>
+    
+      <div class="col-md-6">
+          <div class="form-group">
+              <label for="bookName">Name :</label>
+              <input class="form-control" name="name" [(ngModel)]="bookModel.bookName" required>
+            </div>
+            <div class="form-group">
+                <label for="price">price :</label>
+                <input class="form-control" name="price" [(ngModel)]="bookModel.price" required>
+            </div>
+      </div>
+      <div class="col-md-6">
+          <div class="form-group">
+              <label for="category">category :</label>
+              <input class="form-control" class="form-control" name="category" [(ngModel)]="bookModel.category" required>
+          </div>
+          <div class="form-group">
+              <label for="bookName">author :</label>
+              <input class="form-control" name="author" [(ngModel)]="bookModel.author" required>
+        </div>
+
+      </div>
+      <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+  </div>
+</div>
+

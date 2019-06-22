@@ -1,0 +1,33 @@
+<app-page-header [heading]="'ListBook'" [icon]="'fa-table'"></app-page-header>
+<div class="row">
+    <div class="col col-md-6 col-lg-12">
+      <div class="col-md-12">
+        <button class="btn btn-danger" [routerLink]="['/addBook']"> Add Book </button>
+      </div>
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th hidden class="hidden">Id</th>
+            <th>bookName</th>
+            <th>price</th>
+            <th>category</th>
+            <th>author</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let Book of Books">
+            <td hidden class="hidden">{{Book.id}}</td>
+            <td>{{Book.bookName}}</td>
+            <td>{{Book.price}}</td>
+            <td>{{Book.category}}</td>
+            <td>{{Book.author}}</td>
+            <td><button class="btn btn-danger" (click)="deleteBook(Book)"> Delete</button>
+              <button class="btn btn-danger" (click)="editBook(Book)" style="margin-left: 20px;"> Edit</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
